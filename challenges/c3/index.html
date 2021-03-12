@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C3</title>
+
+    <style>
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: grey;
+        }
+
+        .awesome {
+            position: relative;
+            margin: auto;
+            height: 2em;
+            color: transparent;
+            font-family: 'Cambay', sans-serif;
+            font-size: 10vw;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1em;
+        }
+
+        .awesome > div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .awesome > div:nth-child(1) {
+            -webkit-mask-image: linear-gradient(black 25%, transparent 25%);
+            mask-image: linear-gradient(black 25%, transparent 25%);
+            color: red;
+            animation: awesome1 3s infinite;
+        }
+
+        .awesome > div:nth-child(2) {
+            -webkit-mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+            mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+            color: black;
+            animation: awesome2 3s infinite;
+        }
+
+
+        @keyframes awesome1 {
+            0% {
+                transform: translateX(-100%);
+            }
+            25% {
+                transform: translateX(0%);
+            }
+            55% {
+                transform: translateX(0.1%);
+            }
+            100% {
+                transform: translateX(125%);
+            }
+        }
+
+        @keyframes awesome2 {
+            0% {
+                transform: translateX(-100%);
+            }
+            45% {
+                transform: translateX(0.5%);
+            }
+            65% {
+                transform: translateX(0.2%);
+            }
+            100% {
+                transform: translateX(125%);
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="awesome">
+        AWESOME ALPHA
+        <div>AWESOME ALPHA</div>
+        <div>AWESOME ALPHA</div>
+    </div>
+
+</body>
+</html>
