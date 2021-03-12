@@ -8,7 +8,50 @@
 
     <style>
         /* Write your CSS code here */
-    
+
+        body { margin: 8em; }
+
+        .main-area {
+            border: 1px blue dashed;
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            display: block;
+            width: 200px;
+
+        }
+
+        .main-area .tool-tip {
+            color: white;
+            background-color: #000000;
+            visibility: hidden;
+            padding: 15px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            width: 100px;
+            margin-left: -50px;
+            opacity: 0;
+            transition: 0.1s;
+        }
+
+        .main-area:hover .tool-tip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .main-area .tool-tip::after {
+            content: " ";
+            position: absolute;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #000000 transparent transparent transparent;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+        }
+
     </style>
 
 </head>
@@ -17,6 +60,7 @@
     <!-- Modify the mark up to suit your needs -->
     <div class="main-area">
         Hover me to show pop-up
+        <div class="tool-tip">I'm a popup</div>
     </div>
     
 </body>
